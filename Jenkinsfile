@@ -42,7 +42,6 @@ pipeline {
                       ]
                   }
          }
-
     stage('SonarQube'){
     steps{
         bat label: '', script: '''mvn sonar:sonar \
@@ -50,9 +49,6 @@ pipeline {
         -Dsonar.login=squ_a32f9c9a575ed18b31ba46571ccf182782dec7b3'''
         }
    }
-
- 
-
     stage('Maven Package'){
     steps{
         echo 'Project packaging stage'
