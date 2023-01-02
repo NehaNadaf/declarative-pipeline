@@ -58,4 +58,5 @@ post {
        always {
            cucumber '**/cucumber.json'
        }
+       }
    }
