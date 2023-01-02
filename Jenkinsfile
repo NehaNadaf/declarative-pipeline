@@ -33,6 +33,20 @@ pipeline {
                   }
                } 
         }
+        stage('Generate Cucumber report') {
+            steps{
+                 cucumber buildStatus: 'UNSTABLE',
+                      reportTitle: 'My Cucumber Report',
+                      fileIncludePattern: '**/*.json',
+                         trendsLimit: 10,
+                      classifications: [
+                          [
+                              'key': 'Browser',
+                              'value': 'Chrome'
+                          ]
+                      ]
+                  }
+         }
         
 
 }
